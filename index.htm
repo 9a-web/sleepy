@@ -17,6 +17,7 @@
         border: none;
         font-size: 16px;
         font-weight: 600;
+	color: #1c1c1c;
     }
     .timepicker-tick{
         color: #333;
@@ -448,7 +449,7 @@ function status() {
     if (document.getElementById('time').textContent < '18:00' && document.getElementById('time').textContent >= '06:00'){
         textStatus.innerHTML = 'day'
         textStatus.style.color = '#FFD583'
-        imgStatus.style.backgroundImage = `url('sun.png')`
+        imgStatus.style.backgroundImage = `url('/sun.png')`
 }else if (document.getElementById('time').textContent >= '18:00' && document.getElementById('time').textContent < '22:00'){
 	textStatus.innerHTML = 'evening'
     textStatus.style.color = '#FFA183'
