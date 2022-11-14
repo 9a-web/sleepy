@@ -596,7 +596,7 @@ function func() {
           document.querySelector(selector).innerHTML = getFormattedTime(timeShift);
       }
   }
-  setInterval(func, 1000)
+  setInterval(func, 100)
 
   function funcTwo() {
       const indicator = document.querySelector('#indicator');
@@ -634,7 +634,7 @@ function func() {
           document.querySelector(selector).innerHTML = getFormattedTime(timeShift);
       }
   }
-  setInterval(funcTwo, 1000)
+  setInterval(funcTwo, 100)
 
 let imgStatus = document.getElementById('imgStatus')
 let imgStatus2 = document.getElementById('imgStatus2')
@@ -710,7 +710,7 @@ if (document.getElementById('time4').textContent <= '18:00' && document.getEleme
 }
 
 }
-setInterval(status, 1000)
+setInterval(status, 100)
 
 function daystatus(){
     if (document.getElementById('timet').textContent <= '18:00' && document.getElementById('timet').textContent >= '06:00'){
@@ -771,7 +771,7 @@ if (document.getElementById('time4t').textContent <= '18:00' && document.getElem
 }
 }
 
-setInterval(daystatus, 1000)
+setInterval(daystatus, 100)
 
 function sleeping(){
     document.getElementById('sleeping').style.opacity = '1'
@@ -831,7 +831,7 @@ if (time < '09:00' && time >= '06:00'){
         nightback.style.opacity = '1'
 }
 }
-setInterval(nowclock, 1000)
+setInterval(nowclock, 100)
 
 
 
