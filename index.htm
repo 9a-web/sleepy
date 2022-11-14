@@ -51,13 +51,14 @@
   </style>
 
 <script>
-    window.onload = function () {
+    function loader () {
       document.body.classList.add('loaded_hiding');
-      window.setTimeout(function () {
+      function pre() {
         document.body.classList.add('loaded');
         document.body.classList.remove('loaded_hiding');
-      }, 500);
+      }
     }
+    setTimeout(loader, 100)
   </script>
 	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
