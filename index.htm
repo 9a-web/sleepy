@@ -1,10 +1,6 @@
 <!DOCTYPE html><html> <head>
 	
 	
-<body>
-  <p>Shkarol</p>
-</body>
-
 <div class="preloader" id="preloader">
         
   <svg class="gegga">
@@ -71,12 +67,8 @@
     background: #ffffff;
     z-index: 10000000;
     }
-    #preloader.hide-preloader {
+    .hide-preloader {
     animation: hidePreloader 1s;
-    }
-    
-    #preloader.preloader-hidden {
-    display: none;
     }
     
     @keyframes hidePreloader {
@@ -134,10 +126,16 @@
 
 <script>
 let preloader = document.getElementById('preloader')
+let hidePreloader = document.querySelector('.hide-preloader')
 function loader() {
-preloader.style.display = 'none'
+preloader.classList.add('hide-preloader')
 }
-setTimeout(loader, 1000)
+setTimeout(loader, 2000)
+
+function hide() {
+  preloader.style.display = 'none'
+}
+setTimeout(hide, 3000)
 </script>
 	
 	
