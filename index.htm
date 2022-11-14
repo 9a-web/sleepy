@@ -1,55 +1,113 @@
 <!DOCTYPE html><html> <head>
 	
-	<div class="preloader" id="preloader">
         
-    <svg class="gegga">
-<defs>
- <filter id="gegga">
-   <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
-   <feColorMatrix
-     in="blur"
-     mode="matrix"
-     values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 20 -10"
-     result="inreGegga"
-   />
-   <feComposite in="SourceGraphic" in2="inreGegga" operator="atop" />
- </filter>
-</defs>
-</svg>
-<svg class="snurra" width="200" height="200" viewBox="0 0 200 200">
-<defs>
- <linearGradient id="linjärGradient">
-   <stop class="stopp1" offset="0" />
-   <stop class="stopp2" offset="1" />
- </linearGradient>
- <linearGradient
-   y2="160"
-   x2="160"
-   y1="40"
-   x1="40"
-   gradientUnits="userSpaceOnUse"
-   id="gradient"
-   xlink:href="#linjärGradient"
- />
-</defs>
-<path
- class="halvan"
- d="m 164,100 c 0,-35.346224 -28.65378,-64 -64,-64 -35.346224,0 -64,28.653776 -64,64 0,35.34622 28.653776,64 64,64 35.34622,0 64,-26.21502 64,-64 0,-37.784981 -26.92058,-64 -64,-64 -37.079421,0 -65.267479,26.922736 -64,64 1.267479,37.07726 26.703171,65.05317 64,64 37.29683,-1.05317 64,-64 64,-64"
-/>
-<circle class="strecken" cx="100" cy="100" r="64" />
-</svg>
-<svg class="skugga" width="200" height="200" viewBox="0 0 200 200">
-<path
- class="halvan"
- d="m 164,100 c 0,-35.346224 -28.65378,-64 -64,-64 -35.346224,0 -64,28.653776 -64,64 0,35.34622 28.653776,64 64,64 35.34622,0 64,-26.21502 64,-64 0,-37.784981 -26.92058,-64 -64,-64 -37.079421,0 -65.267479,26.922736 -64,64 1.267479,37.07726 26.703171,65.05317 64,64 37.29683,-1.05317 64,-64 64,-64"
-/>
-<circle class="strecken" cx="100" cy="100" r="64" />
-</svg>
-     
-   </div>
+      <div class="preloader" id="preloader">
+        
+        <main>
+          <svg class="ap" viewBox="0 0 128 256" width="128px" height="256px" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ap-grad1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="hsl(223,90%,55%)" />
+                <stop offset="100%" stop-color="hsl(253,90%,55%)" />
+              </linearGradient>
+              <linearGradient id="ap-grad2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="hsl(193,90%,55%)" />
+                <stop offset="50%" stop-color="hsl(223,90%,55%)" />
+                <stop offset="100%" stop-color="hsl(253,90%,55%)" />
+              </linearGradient>
+            </defs>
+            <circle class="ap__ring" r="56" cx="64" cy="192" fill="none" stroke="#ddd" stroke-width="16" stroke-linecap="round" />
+            <circle class="ap__worm1" r="56" cx="64" cy="192" fill="none" stroke="url(#ap-grad1)" stroke-width="16" stroke-linecap="round" stroke-dasharray="87.96 263.89" />
+            <path class="ap__worm2" d="M120,192A56,56,0,0,1,8,192C8,161.07,16,8,64,8S120,161.07,120,192Z" fill="none" stroke="url(#ap-grad2)" stroke-width="16" stroke-linecap="round" stroke-dasharray="87.96 494" />
+          </svg>
+        </main>
+          
+        </div>
 	
-	<style>
-#preloader {
+	    <style>
+    body {
+        place-items: center;
+        transition: background-color 0.3s;
+    }
+    main {
+        padding: 1.5em 0;
+    }
+    
+    .ap {
+        width: 8em;
+        height: 16em;
+    }
+    .ap__ring {
+        stroke: hsla(var(--hue),10%,10%,0.15);
+        transition: stroke 0.3s;
+    }
+    .ap__worm1,
+    .ap__worm2 {
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+    .ap__worm1 {
+        animation-name: worm1;
+    }
+    .ap__worm2 {
+        animation-name: worm2;
+        visibility: hidden;
+    }
+    
+    /* Dark theme */
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --bg: hsl(var(--hue),10%,10%);
+            --fg: hsl(var(--hue),10%,90%);
+        }
+        .ap__ring {
+            stroke: hsla(var(--hue),10%,90%,0.1);
+        }
+    }
+    
+    /* Animtions */
+    @keyframes worm1 {
+        from {
+            animation-timing-function: ease-in-out;
+            stroke-dashoffset: -87.96;
+        }
+        20% {
+            animation-timing-function: ease-in;
+            stroke-dashoffset: 0;
+        }
+        60% {
+            stroke-dashoffset: -791.68;
+            visibility: visible;
+        }
+        60.1%,
+        to {
+            stroke-dashoffset: -791.68;
+            visibility: hidden;
+        }
+    }
+    @keyframes worm2 {
+        from,
+        60% {
+            stroke-dashoffset: -87.96;
+            visibility: hidden;
+        }
+        60.1% {
+            animation-timing-function: cubic-bezier(0,0,0.5,0.75);
+            stroke-dashoffset: -87.96;
+            visibility: visible;
+        }
+        77% {
+            animation-timing-function: cubic-bezier(0.5,0.25,0.5,0.88);
+            stroke-dashoffset: -340;
+            visibility: visible;
+        }
+        to {
+            stroke-dashoffset: -669.92;
+            visibility: visible;
+        }
+    }
+    
+    #preloader {
     position: fixed;
     top: 0;
     left: 0;
