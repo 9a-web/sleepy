@@ -309,56 +309,6 @@ function animate() {
 animate();
     
 </script>
-
- <div class="preloader">
-    <svg class="preloader__image" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-      <path fill="currentColor"
-        d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
-      </path>
-    </svg>
-  </div>
-	
-	
-	<style>
-    .preloader {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  /* фоновый цвет */
-  background: #e0e0e0;
-  z-index: 1001;
-}
-
-.preloader__image {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  width: 70px;
-  height: 70px;
-  margin-top: -35px;
-  margin-left: -35px;
-  text-align: center;
-  animation: preloader-rotate 2s infinite linear;
-}
-
-@keyframes preloader-rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.loaded_hiding .preloader {
-  transition: 0.3s opacity;
-  opacity: 0;
-}
-
-.loaded .preloader {
-  display: none;
-}
-  </style>
 	
 	
 <div class='t396__elem tn-elem tn-elem__4942724771665405899125' data-elem-id='1665405899125' data-elem-type='shape' data-field-top-value="2921" data-field-top-res-320-value="-430" data-field-left-value="-407" data-field-left-res-320-value="8" data-field-height-value="946" data-field-height-res-320-value="1030" data-field-width-value="946" data-field-width-res-320-value="986" data-field-axisy-value="top" data-field-axisx-value="center" data-field-axisx-res-320-value="center" data-field-container-value="window" data-field-container-res-320-value="window" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px"><div id="nightback" class='tn-atom t-bgimg' style="background-image:url('tild3332-3964-4562-b666-303637396336/photo.svg');"> </div> </div> 
@@ -696,16 +646,6 @@ function wakeup(){
 
 </script>
 	
-	<script>
-    function loader () {
-      document.body.classList.add('loaded_hiding');
-      function pre() {
-        document.body.classList.add('loaded');
-        document.body.classList.remove('loaded_hiding');
-      }
-    }
-    setTimeout(loader, 100)
-  </script>
  
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
