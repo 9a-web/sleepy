@@ -1,6 +1,10 @@
 <!DOCTYPE html><html> <head>
 	
 	
+<body>
+  <p>Shkarol</p>
+</body>
+
 <div class="preloader" id="preloader">
         
   <svg class="gegga">
@@ -51,6 +55,11 @@
 
   <style>
      #preloader {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
     position: fixed;
     top: 0;
     left: 0;
@@ -78,13 +87,6 @@
         opacity: 0;
     }
     }
-    body {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  overflow: hidden;
-}
 .gegga {
   width: 0;
 }
@@ -131,14 +133,11 @@
         </style>
 
 <script>
-    window.onload = function() {
-    let preloader = document.getElementById('preloader');
-    preloader.classList.add('hide-preloader');
-    setInterval(function() {
-          preloader.classList.add('preloader-hidden');
-    }, 990);
-    
-    }
+let preloader = document.getElementById('preloader')
+function loader() {
+preloader.style.display = 'none'
+}
+setTimeout(loader, 1000)
 </script>
 	
 	
